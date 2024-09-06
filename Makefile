@@ -7,6 +7,10 @@ BINARY=goeap_proxy
 VERSION=`git describe --tags --dirty --always`
 BUILD=`date --utc +%FT%T%z`
 
+PKG_USE_MIPS16:=0
+PKG_BUILD_FLAGS:=no-mips16
+
+
 # Setup the -ldflags option for go build here, interpolate the variable values
 LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.BuildStamp=${BUILD}"
 
